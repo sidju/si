@@ -1,5 +1,5 @@
 CC ?= cc
-CFLAGS ?= -std=c11 -Wall -Wextra -Wpedantic -Iinclude
+CFLAGS ?= -std=c11 -Wall -Wextra -Wpedantic -Iinclude -Ivendor/utf8.h
 LDFLAGS ?=
 
 BUILD_DIR := build
