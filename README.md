@@ -22,6 +22,23 @@ make test
 direnv allow
 ```
 
+## Dev machine setup
+
+1. Install Nix:
+   - https://nixos.org/download/
+2. Install direnv:
+   - https://direnv.net/docs/installation.html
+3. Enable direnv in your shell:
+   - https://direnv.net/docs/hook.html
+4. Activate this repository environment:
+
+```sh
+cd /path/to/si
+direnv allow
+```
+
+After activation, the flake-based development dependencies are loaded automatically.
+
 ## Dependencies
 
 - Development dependencies are provided through `flake.nix`.
