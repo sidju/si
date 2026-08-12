@@ -5,5 +5,5 @@ Each vendored dependency must include its upstream license in this directory.
 
 Current dependencies:
 
-- `utf8.h` from https://github.com/sheredom/utf8.h
-  - License: Unlicense (`vendor/utf8.h/LICENSE`)
+- `libgrapheme` from https://github.com/tekknolagi/libgrapheme
+  - License: ISC (`vendor/libgrapheme/LICENSE`)

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "grapheme.h"
 #include "si/lexer.h"
 #include "si/parser.h"
 #include "si/runtime.h"
@@ -35,6 +36,13 @@ static int test_grapheme_aware_lexing(void) {
         return 0;
     }
     return 1;
+}
+
+static int test_grapheme_iteration_support(void) {
+    const char *grapheme = "a\xCC\x81";
+
+    return assert_true(grapheme_next_character_break_utf8(grapheme, strlen(grapheme)) == strlen(grapheme),
+                       "expected vendored library to iterate a composed grapheme as one cluster");
 }
 
 static int test_recursive_descent_parse(void) {
@@ -95,6 +103,7 @@ static int test_runtime_execute(void) {
 
 int main(void) {
     int ok = 1;
+    ok = test_grapheme_iteration_support() && ok;
     ok = test_grapheme_aware_lexing() && ok;
     ok = test_recursive_descent_parse() && ok;
     ok = test_runtime_execute() && ok;

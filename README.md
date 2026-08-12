@@ -43,5 +43,5 @@ After activation, the flake-based development dependencies are loaded automatica
 
 - Development dependencies are provided through `flake.nix`.
 - Niche dependencies should be vendored under `vendor/` with explicit licenses.
-- UTF-8 parsing uses vendored upstream `utf8.h` (`vendor/utf8.h/`).
+- UTF-8 grapheme handling uses vendored upstream `libgrapheme` (`vendor/libgrapheme/`).
 - Project license is MIT (`LICENSE`).
